@@ -16,5 +16,11 @@ def service(request):
     return render(request, "service.html")
 
 def contact(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        gmail = request.POST['gmail']
+        phone = request.POST['phone']
+        msg = request.POST['message']
+        
     return render(request, "contact.html")
 
