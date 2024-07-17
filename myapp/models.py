@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 # object relation mapping
 
@@ -10,7 +11,7 @@ class TodoItem(models.Model):
     
 class CustomsInfo(models.Model):
     name = models.CharField(max_length=20)
-    register_time = models.DateField()
+    register_time = models.DateTimeField()
     gmail = models.EmailField()
     phone = models.CharField(max_length=15)
     message = models.CharField(max_length=200)
