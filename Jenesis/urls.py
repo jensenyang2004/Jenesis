@@ -1,5 +1,9 @@
 """
+<<<<<<< HEAD
 URL configuration for jenesis project.
+=======
+URL configuration for Jenesis project.
+>>>>>>> origin/main
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -15,6 +19,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+<<<<<<< HEAD
 from django.urls import path, include
 
 urlpatterns = [
@@ -22,4 +27,10 @@ urlpatterns = [
     # path("myapp/", include("myapp.urls"))
     #if a url is myapp/home -> will be dealt with in myapps.urls
     path("", include("myapp.urls"))
+=======
+from django.urls import path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+>>>>>>> origin/main
 ]
