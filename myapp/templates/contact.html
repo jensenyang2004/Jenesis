@@ -104,7 +104,7 @@
         </div>
         <div class="col-md-5 col-lg-4 px-0">
           <form action="" method="POST">
-            {% csrf_token %}
+            {% csrf_token %} <!--  -->
             {{ form.as_p }}
             <div>
               <input type="text" placeholder="Name" name="name"/>
@@ -128,6 +128,27 @@
   </section>
 
   <!-- end contact section -->
+
+  {% comment %} <!-- Handle Error Email Section-->
+   <div class="modal fade" id="emailErrorModal" tabindex="-1" role="dialog" aria-labelledby="emailErrorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="emailErrorModalLabel">Invalid Email</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Please enter a valid email address.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- end Handle Error Email Section--> {% endcomment %}
   
   <!-- client section -->
 
