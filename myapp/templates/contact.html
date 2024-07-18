@@ -29,6 +29,16 @@
   <link href="{% static 'css/style.css' %}" rel="stylesheet" />
   <!-- responsive style -->
   <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+
+  <style>
+    .scroll-container {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+    }
+  </style>
+
 </head>
 
 <body class="sub_page">
@@ -151,7 +161,6 @@
   <!-- end Handle Error Email Section--> {% endcomment %}
   
   <!-- client section -->
-
   <section class="client_section layout_padding-bottom">
     <div class="container">
       <div class="heading_container">
@@ -159,25 +168,29 @@
           What <span>says</span> our clients
         </h2>
       </div>
+
+      <!-- replicated seciton -->
+      {% for custom in CustomInfo %}
       <div class="box">
         <div class="client_id">
           <div class="name">
             <h4>
-              Sandy <br>
-              Nor
+              {{ custom.name }}
             </h4>
           </div>
           <div class="img-box">
-            <img src="{% static 'images/client.jpg' %}" alt="">
+            <img src="{% static custom.photo %}" alt="">
           </div>
         </div>
         <div class="detail-box">
           <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem
+            {{ custom.message }}
           </p>
           <img src="{% static 'images/quote.png' %}" alt="">
         </div>
       </div>
+      {% endfor %}
+      <!-- end replicated seciton -->
     </div>
   </section>
 

@@ -28,12 +28,16 @@ def valid_email(email):
         return False
 
 def contact(request):
-    if request.method == 'POST' and 'send' in request.POST:
+    # put the db data into html
+    data = CustomInfo.objects.filter(display=True)
+    customsInfo = {"CustomInfo": data}
+    
+    if (request.method == 'POST'):
         name = request.POST['name']
         gmail = request.POST['gmail']
         phone = request.POST['phone']
         msg = request.POST['message']
-        
+        # if 'send' in request.POST: 
         if (len(name)>20 or len(name)<1):
             return HttpResponse('Your name is too long!')
         elif (len(phone)>15 or len(phone)<1):
@@ -46,6 +50,5 @@ def contact(request):
             regtime = timezone.now()
             new_info = CustomInfo(name=name, gmail=gmail, phone=phone, message=msg, register_time = regtime)
             new_info.save()
-
-    return render(request, "contact.html")
+    return render(request, "contact.html", customsInfo)
 

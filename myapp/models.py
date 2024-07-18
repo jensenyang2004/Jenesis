@@ -12,6 +12,7 @@ class CustomInfo(models.Model):
     gmail = models.EmailField()
     phone = models.CharField(max_length=15)
     message = models.CharField(max_length=200)
+    photo = models.CharField(max_length=20, default='images/client.jpg')
     display = models.BooleanField(default=False)
 
 class MemberInfo(models.Model):
@@ -21,11 +22,11 @@ class MemberInfo(models.Model):
     phone = models.CharField(max_length=15)
     igAddr = models.CharField(max_length=30)
     fbAddr = models.CharField(max_length=30)
-    gitHubAddr = models.CharField(max_length=30)
+    gitHubLink = models.CharField(max_length=30, default='')
     description = models.CharField(max_length=200)
-    photo = models.CharField(max_length=50)
+    photo = models.CharField(max_length=20)
     display = models.BooleanField(default=True)
-    
+
 class ServiceInfo(models.Model):
     serviceName = models.CharField(max_length=20)
     serviceDescription = models.CharField(max_length=200)
@@ -38,4 +39,3 @@ class ServiceInfo(models.Model):
     exampleImage =  models.CharField(max_length=20)
     display = models.BooleanField(default=True)
 
-    
