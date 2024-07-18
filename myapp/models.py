@@ -28,12 +28,14 @@ class MemberInfo(models.Model):
     
 class ServiceInfo(models.Model):
     serviceName = models.CharField(max_length=20)
-    gitHubLink = models.CharField(max_length=30)
-    mainMember = models.CharField(max_length=20)
-    image = models.CharField(max_length=20)
-    description = models.CharField(max_length=200)
-    startTime =  models.DateField()
-    endTime = models.DateField()
+    serviceDescription = models.CharField(max_length=200)
+    serviceImage = models.CharField(max_length=20)
+    exampleGitHubLink = models.CharField(max_length=30)
+    exampleDescription = models.CharField(max_length=200) 
+    exampleContributor = models.CharField(max_length=20)
+    exampleStartTime =  models.DateField()
+    exampleEndTime = models.DateField()
+    exampleImage =  models.CharField(max_length=20)
     display = models.BooleanField(default=True)
 
     
